@@ -101,67 +101,13 @@ module.exports = {
         })();
     },
 
-    registerCommandsLocation: (location) => {
+    setPresence: (client, status, activityType, activityName) => {
+        client.user.setPresence({
+            activities: [{ name: activityName, type: activityType }],
+            status: status,
+          });
 
-        const path = require('path');
-
-        const commandsPath = path.join(location);
-        const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
-        // command handler
-        for (const file of commandFiles) {
-	    const filePath = path.join(commandsPath, file);
-	    const command = require(filePath);
-	    // Set a new item in the Collection with the key as the command name and the value as the exported module
-	    if ('data' in command && 'execute' in command) {
-		    client.commands.set(command.data.name, command);
-	    } else {
-		    console.log(`[WARNING] The command at ${location} is missing a required "data" or "execute" property.`);
-    	}
-        }   
-
-    },
-
-
-    createSlashCommand: (name, description, options) => {
-        const command = new Discord.SlashCommandBuilder()
-        .setName(name)
-        .setDescription(description)
-        .addOptions(options);
-        return command;
-    },
-
-    createSlashSubCommand: (name, description, options) => {
-        const command = new Discord.SlashCommandSubcommandBuilder()
-        .setName(name)
-        .setDescription(description)
-        .addOptions(options);
-        return command;
-    },
-
-    createSlashSubCommandGroup: (name, description, options) => {
-        const command = new Discord.SlashCommandSubcommandGroupBuilder()
-        .setName(name)
-        .setDescription(description)
-        .addOptions(options);
-        return command;
-    },
-
-    createSlashCommandOption: (type, name, description, required, choices) => {
-        const option = new Discord.SlashCommandBuilder()
-        .setName(name)
-        .setDescription(description)
-        .addOptions(options);
-        return command;
-    },
-
-    createSlashCommandOptionString: (name, description, required, choices) => {
-        const option = new Discord.SlashCommandStringOption()
-        .setName(name)
-        .setDescription(description)
-        .setRequired(required)
-        .addChoices(choices);
-        return option;
-    }
-
+        console.log(`Presence set to ${status} ${activityType} ${activityName}`);
+      }
    
 }
