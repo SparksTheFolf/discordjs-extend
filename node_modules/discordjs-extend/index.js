@@ -1,9 +1,14 @@
 const Discord = require('discord.js');
+const { Client, GatewayIntentBits, Collection, Events, ActivityType } = require('discord.js');
 
 module.exports = {
-  createBot: (token) => {
-    const client = new Discord.Client();
-    client.login(token);
-    return client;
-  }
+    // Function to create a new Discord client
+    createClient: (token, intents) => {
+      const client = new Discord.Client({ intents });
+      client.login(token);
+      return client;
+    }
+
+
+
 }
