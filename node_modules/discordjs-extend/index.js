@@ -103,7 +103,7 @@ module.exports = {
 
     setPresence: (client, status, activityType, activityName) => {
         client.user.setPresence({
-            activities: [{ name: activityName, type: activityType }],
+            activities: [{ name: activityName, type: ActivityType.Watching }],
             status: status,
           });
 
