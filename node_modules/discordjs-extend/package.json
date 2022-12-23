@@ -1,6 +1,6 @@
 {
-  "name": "discordjs-extend",
-  "version": "0.0.1",
+  "name": "direct-discord-bot",
+  "version": "0.0.05",
   "description": "Make discordjs easier for new programmers",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/SparksTheFolf/discordjs-extend#readme",
   "dependencies": {
     "discord.js": "^14.7.1",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "fs": "^0.0.1-security"
   }
 }
