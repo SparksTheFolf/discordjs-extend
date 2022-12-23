@@ -7,8 +7,13 @@ module.exports = {
       const client = new Discord.Client({ intents });
       client.login(token);
       return client;
-    }
+    },
 
-
-
+    createSlashCommand: (client, commandName, callback) => {
+        client.on('message', (message) => {
+          if (message.content.startsWith(`/${commandName}`)) {
+            callback(message);
+          }
+        });
+      }
 }
