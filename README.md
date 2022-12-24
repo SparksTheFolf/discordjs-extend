@@ -45,7 +45,7 @@ client.on('ready', () => {
 
 ## Documentation
 
-[Documentation](https://linktodocumentation)
+[Documentation](https://wuffs.net/discordbot)
 
 
 ## Environment Variables

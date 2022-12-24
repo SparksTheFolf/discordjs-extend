@@ -33,7 +33,6 @@ module.exports = {
         console.log(`Presence set to ${status} ${activityType} ${activityName}`);
       },
 
-      //make a function to handle commands from the ./testing/commands folder
         handleCommands: (client, commandsPath) => {
 
             const fs = require('node:fs');
