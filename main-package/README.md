@@ -39,6 +39,8 @@ const client = createClient(process.env.TOKEN, ['Guilds', 'GuildMessages']);
 client.on('ready', () => {
     showClientInfo(client.user.tag, client.guilds.cache.size, client.users.cache.size);
     setPresence(client, 'online', 'WATCHING', 'Direct Discord Bots');
+    handleCommands(client, path.join(__dirname, 'commands'));
+    registerSlashGlobal(process.env.TOKEN, process.env.CLIENT_ID, path.join(__dirname, 'commands'));
 });
 ```
 
