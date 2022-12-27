@@ -1,6 +1,6 @@
 {
   "name": "direct-discord-bot",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Make discordjs easier for new programmers",
   "main": "index.js",
   "scripts": {
