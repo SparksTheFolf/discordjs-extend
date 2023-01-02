@@ -5,7 +5,7 @@ const client = createClient(process.env.TOKEN, ['Guilds', 'GuildMessages']);
 
 client.on('ready', () => {
     showClientInfo(client.user.tag, client.guilds.cache.size, client.users.cache.size);
-    setPresence(client, 'online', 'WATCHING', 'bruh');
+    setPresence(client, 'online', 'WATCHING', 'V14.6.3 DISCORD.JS');
     handleCommands(client, path.join(__dirname, 'commands'));
 
 
