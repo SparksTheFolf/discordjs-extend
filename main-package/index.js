@@ -123,7 +123,29 @@ module.exports = {
                     console.error(error);
                 }
             })();
-        }
+        },
+
+        registerButtonCommand(client, options){
+            const button = {
+                name: options.name,
+                discription: options.discription
+            };
+        },
+        
 
    
-}
+    // Function to create a new Discord slash command
+    createSlashCommand: (client, options) => {
+      const command = {
+        name: options.name,
+        description: options.description,
+        aliases: options.aliases,
+        clientPermissions: options.clientPermissions,
+        userPermissions: options.userPermissions,
+        args: options.args,
+        run: options.callback
+      };
+  
+      client.commands.set(options.name, command);
+    }
+  };
